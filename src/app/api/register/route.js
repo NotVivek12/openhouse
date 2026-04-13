@@ -124,7 +124,8 @@ export async function POST(req) {
     // Connect to Google Sheet
     const doc = new GoogleSpreadsheet(SHEET_ID, auth);
     await doc.loadInfo(); // Load spreadsheet info
-    const sheet = doc.sheetsByIndex[0]; // First sheet
+    const sheet = doc.sheetsByIndex[0]; 
+    // const sheet = doc.sheetsByTitle["coh2026"];
 
     // Append data to Google Sheet
     await sheet.addRow({
